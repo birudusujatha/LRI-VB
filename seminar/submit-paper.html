@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="https://firebasestorage.googleapis.com/v0/b/whatsup-519.firebasestorage.app/o/favicon-32x32.png?alt=media&token=c3233c51-328c-47dc-95e4-c3b95d068bcb">
+    <title>Submit Paper | ICAI25</title>
+    <meta name="description"
+        content="ICAI25 - International Conference on AI/ML, Digital Transformation & Sectoral Innovations, hosted by Godavari Global University">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
+    <script src="assets/js/site-data.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4906126626960844"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="floating-action">
+    <a href="https://aiconclave2025.in/registration.html" class="fab-button" id="registerButton">
+        <span class="fab-text">Register Now</span>
+        <span class="fab-icon">→</span>
+    </a>
+</div>
+
+<style>
+.floating-action {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    z-index: 1000;
+}
+
+.fab-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 110px;
+    height: 45px;
+    padding: 0 10px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.fab-button:hover {
+    width: 120px;
+    background-color: #0056b3;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.fab-icon {
+    font-size: 16px;
+    transition: transform 0.3s ease;
+}
+
+.fab-button:hover .fab-icon {
+    transform: translateX(4px);
+}
+
+/* Ripple effect */
+.fab-button::after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    pointer-events: none;
+    display: none;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .fab-button {
+        width: 90px;
+        height: 40px;
+        font-size: 12px;
+        padding: 0 8px;
+    }
+    
+    .fab-button:hover {
+        width: 100px;
+    }
+    
+    .fab-icon {
+        font-size: 14px;
+    }
+    
+    .floating-action {
+        bottom: 10px;
+        right: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .fab-button {
+        width: 80px;
+        height: 35px;
+        font-size: 11px;
+    }
+    
+    .fab-button:hover {
+        width: 90px;
+    }
+}
+</style>
+
+<script>
+document.getElementById('registerButton').addEventListener('click', function(e) {
+    const button = this;
+    const ripple = button.querySelector('::after');
+    const rect = button.getBoundingClientRect();
+    
+    button.style.setProperty('--ripple-x', (e.clientX - rect.left) + 'px');
+    button.style.setProperty('--ripple-y', (e.clientY - rect.top) + 'px');
+    button.querySelector('::after').style.display = 'block';
+    
+    setTimeout(() => {
+        button.querySelector('::after').style.display = 'none';
+    }, 600);
+});
+</script>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-content">
+            <div class="loader"></div>
+            <h2>ICAI25</h2>
+            <p>Loading amazing content...</p>
+        </div>
+    </div>
+
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="header-contact">
+                    <a href="mailto:conferences@ggu.edu.in"><i class="fas fa-envelope"></i> conferences@ggu.edu.in</a>
+                </div>
+                <div class="header-dates">
+                    <span><i class="far fa-calendar-alt"></i> November 13-15, 2025</span>
+                </div>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="container" style="display: flex; align-items: center; justify-content: space-between;">
+                <div class="logos-container" style="display: flex; align-items: center; gap: 20px;">
+                    <div class="logo">
+                        <a href="index.html">
+                            <img src="https://vduoxfcddksibwrpiuqd.supabase.co/storage/v1/object/public/image/images/Picsart_25-03-23_08-07-46-287.jpg"
+                                alt="ICAI25 Logo" class="logo-image">
+                        </a>
+                    </div>
+                </div>
+                <nav id="main-nav" style="display: flex; align-items: center;">
+                    <img src="https://qaizklilgqdaomywsofw.supabase.co/storage/v1/object/public/certificates//icai25.png"
+                        alt="Menu Icon" style="height: 40px; margin-right: 15px;">
+                    <button id="menu-toggle" aria-label="Toggle Navigation Menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <ul class="nav-links">
+                        <li><a href="index.html" id="nav-home">Home</a></li>
+                        <li><a href="committee.html" id="nav-committee">Committee</a></li>
+                        <li class="dropdown">
+                            <a href="#" id="nav-authors">Authors</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="speakers.html">Speakers</a></li>
+                                <li><a href="tracks.html">Tracks</a></li>
+                                <li><a href="important-dates.html">Important Dates</a></li>
+                                <li><a href="paper-submissions.html" class="active">Paper Submissions</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="registration.html" id="nav-registration">Registration</a></li>
+                        <li><a href="contact.html" id="nav-contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="page-header">
+           
+        </div>
+
+        <section class="submission section">
+            <div class="container">
+                <div class="content-box">
+                    <div id="submission-form-container">
+                        <form id="paper-submission-form" class="submission-form">
+                            <div class="form-section">
+                                <h3>Paper Information</h3>
+                                <div class="form-group">
+                                    <label for="paper-title" class="form-label">Paper Title *</label>
+                                    <input type="text" id="paper-title" name="paper-title" class="form-control"
+                                        required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="paper-abstract" class="form-label">Abstract *</label>
+                                    <textarea id="paper-abstract" name="paper-abstract" class="form-control" rows="5"
+                                        required></textarea>
+                                    <div class="form-hint">150-250 words summarizing your research</div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="paper-keywords" class="form-label">Keywords *</label>
+                                    <input type="text" id="paper-keywords" name="paper-keywords" class="form-control"
+                                        required>
+                                    <div class="form-hint">5-8 keywords separated by commas</div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="paper-track" class="form-label">Conference Track *</label>
+                                    <select id="paper-track" name="paper-track" class="form-control" required>
+                                        <option value="">Select a track</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Paper Type *</label>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="paper-type" value="Full Paper" required> Full
+                                            Paper (6-8 pages)
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="paper-type" value="Short Paper"> Short Paper (2-4
+                                            pages)
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-section">
+                                <h3>Author Information</h3>
+                                <div id="authors-container">
+                                    <div class="author-info" data-author-id="1">
+                                        <h4>Corresponding Author</h4>
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label for="author-name-1" class="form-label">Full Name *</label>
+                                                <input type="text" id="author-name-1" name="author-name-1"
+                                                    class="form-control" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="author-email-1" class="form-label">Email *</label>
+                                                <input type="email" id="author-email-1" name="author-email-1"
+                                                    class="form-control" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label for="author-affiliation-1" class="form-label">Affiliation
+                                                    *</label>
+                                                <input type="text" id="author-affiliation-1" name="author-affiliation-1"
+                                                    class="form-control" required>
+                                                <div class="form-hint">University or Organization</div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="author-country-1" class="form-label">Country *</label>
+                                                <input type="text" id="author-country-1" name="author-country-1"
+                                                    class="form-control" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="button" id="add-author-btn" class="btn-secondary">
+                                        <i class="fas fa-plus"></i> Add Co-Author
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="form-section">
+                                <h3>Paper Submission</h3>
+                                <div class="form-group">
+                                    <label for="paper-file" class="form-label">Upload Paper (PDF format only) *</label>
+                                    <input type="file" id="paper-file" name="paper-file" class="form-control"
+                                        accept=".pdf" required>
+                                    <div class="form-hint">Maximum file size: 10MB</div>
+                                </div>
+                                <div class="paper-upload-preview"></div>
+                                <div class="form-group">
+                                    <label class="form-label checkbox-label">
+                                        <input type="checkbox" id="paper-declaration" name="paper-declaration" required>
+                                        I confirm that this paper represents original work and has not been published or
+                                        submitted elsewhere.
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label checkbox-label">
+                                        <input type="checkbox" id="paper-rules" name="paper-rules" required>
+                                        I have read and agree to the conference submission guidelines and ethical
+                                        standards.
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="submission-actions">
+                                <button type="submit" class="btn-submit" id="submit-paper-btn">
+                                    <span class="btn-text">Submit Paper</span>
+                                    <span class="btn-loading" style="display: none;">
+                                        <i class="fas fa-spinner fa-spin"></i> Submitting Paper...
+                                    </span>
+                                </button>
+                            </div>
+                        </form>
+                        <div id="submission-result" style="display: none;"></div>
+                        <div id="submission-progress" style="display: none;">
+                            <div class="progress">
+                                <div class="progress-bar" id="upload-progress-bar"></div>
+                            </div>
+                            <p id="progress-status">Uploading paper...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Firebase SDK -->
+        <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-storage-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database-compat.js"></script>
+        <script src="assets/js/firebase-config.js"></script>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                // Check if Firebase is available
+                if (typeof firebase === 'undefined') {
+                    console.error('Firebase SDK not loaded');
+                    alert('Firebase SDK failed to load. Please check your internet connection and try again.');
+                    return;
+                }
+
+                try {
+                    // Initialize Firebase
+                    console.log('Initializing Firebase...');
+                    const app = firebase.initializeApp(firebaseConfig);
+                    const storage = firebase.storage();
+                    const database = firebase.database();
+                    console.log('Firebase initialized successfully');
+
+                    // Define tracks
+                    const tracks = [
+                        "Artificial Intelligence & Machine Learning",
+                        "Digital Transformation & Manufacturing",
+                        "AI for Sustainability & Smart Environment",
+                        "Agri-Tech and Sustainable Farming Practices",
+                        "Cybersecurity & Blockchain Innovations",
+                        "AI & Healthcare Innovations",
+                        "AI in Business & Finance",
+                        "Human-Computer Interaction & AR/VR"
+                    ];
+
+                    // Populate tracks
+                    const trackSelect = document.getElementById('paper-track');
+                    tracks.forEach(track => {
+                        const option = document.createElement('option');
+                        option.value = track;
+                        option.textContent = track;
+                        trackSelect.appendChild(option);
+                    });
+
+                    // Author management
+                    let authorCount = 1;
+                    const addAuthorBtn = document.getElementById('add-author-btn');
+                    const authorsContainer = document.getElementById('authors-container');
+
+                    addAuthorBtn.addEventListener('click', addAuthor);
+
+                    function addAuthor() {
+                        authorCount++;
+                        const authorDiv = createAuthorElement(authorCount);
+                        authorsContainer.appendChild(authorDiv);
+                    }
+
+                    function createAuthorElement(count) {
+                        const div = document.createElement('div');
+                        div.className = 'author-info';
+                        div.dataset.authorId = count;
+                        div.innerHTML = `
+                        <div class="author-header">
+                            <h4>Co-Author ${count - 1}</h4>
+                            <button type="button" class="remove-author-btn" data-author-id="${count}">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="author-name-${count}" class="form-label">Full Name *</label>
+                                <input type="text" id="author-name-${count}" name="author-name-${count}" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="author-email-${count}" class="form-label">Email *</label>
+                                <input type="email" id="author-email-${count}" name="author-email-${count}" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="author-affiliation-${count}" class="form-label">Affiliation *</label>
+                                <input type="text" id="author-affiliation-${count}" name="author-affiliation-${count}" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="author-country-${count}" class="form-label">Country *</label>
+                                <input type="text" id="author-country-${count}" name="author-country-${count}" class="form-control" required>
+                            </div>
+                        </div>
+                    `;
+
+                        div.querySelector('.remove-author-btn').addEventListener('click', () => div.remove());
+                        return div;
+                    }
+
+                    // File preview
+                    const fileInput = document.getElementById('paper-file');
+                    const filePreview = document.querySelector('.paper-upload-preview');
+
+                    fileInput.addEventListener('change', () => {
+                        const file = fileInput.files[0];
+                        if (file) {
+                            const fileName = file.name;
+                            const fileSize = (file.size / 1024).toFixed(2);
+                            filePreview.innerHTML = `
+                            <div class="file-info">
+                                <i class="fas fa-file-pdf file-icon"></i>
+                                <div>
+                                    <p>${fileName}</p>
+                                    <p>${fileSize} KB</p>
+                                </div>
+                            </div>
+                        `;
+                            filePreview.classList.add('show');
+                        } else {
+                            filePreview.classList.remove('show');
+                        }
+                    });
+
+                    // Function to generate a unique 5-digit ID
+                    async function generateUniqueId() {
+                        let id;
+                        let isUnique = false;
+                        let attempts = 0;
+                        const maxAttempts = 10; // Prevent infinite loop
+
+                        while (!isUnique && attempts < maxAttempts) {
+                            id = Math.floor(10000 + Math.random() * 90000).toString(); // 10000-99999
+                            const snapshot = await database.ref('submissions').child(id).once('value');
+                            isUnique = !snapshot.exists();
+                            attempts++;
+                        }
+
+                        if (!isUnique) {
+                            throw new Error('Unable to generate a unique ID after multiple attempts. Please try again.');
+                        }
+                        return id;
+                    }
+
+                    // Form submission
+                    const form = document.getElementById('paper-submission-form');
+                    const resultDiv = document.getElementById('submission-result');
+                    const progressDiv = document.getElementById('submission-progress');
+                    const progressBar = document.getElementById('upload-progress-bar');
+                    const progressStatus = document.getElementById('progress-status');
+                    const submitButton = document.getElementById('submit-paper-btn');
+                    const btnText = submitButton.querySelector('.btn-text');
+                    const btnLoading = submitButton.querySelector('.btn-loading');
+
+                    form.addEventListener('submit', async function (e) {
+                        e.preventDefault();
+
+                        try {
+                            console.log('Form submission started');
+
+                            if (!form.checkValidity()) {
+                                throw new Error('Please fill in all required fields correctly');
+                            }
+
+                            const file = fileInput.files[0];
+                            if (!file) {
+                                throw new Error('Please select a PDF file');
+                            }
+                            if (!file.type.match('application/pdf')) {
+                                throw new Error('Please upload a valid PDF file');
+                            }
+                            if (file.size > 10 * 1024 * 1024) { // 10MB limit
+                                throw new Error('File size exceeds 10MB limit');
+                            }
+
+                            btnText.style.display = 'none';
+                            btnLoading.style.display = 'inline-block';
+                            form.style.display = 'none';
+                            progressDiv.style.display = 'block';
+                            progressStatus.textContent = 'Generating unique ID...';
+
+                            const uniqueId = await generateUniqueId(); // Generate unique 5-digit ID
+
+                            const paperData = {
+                                uniqueId: uniqueId,
+                                title: document.getElementById('paper-title').value,
+                                abstract: document.getElementById('paper-abstract').value,
+                                keywords: document.getElementById('paper-keywords').value,
+                                track: document.getElementById('paper-track').value,
+                                type: document.querySelector('input[name="paper-type"]:checked').value,
+                                authors: Array.from(document.querySelectorAll('.author-info')).map(element => ({
+                                    name: element.querySelector(`#author-name-${element.dataset.authorId}`).value,
+                                    email: element.querySelector(`#author-email-${element.dataset.authorId}`).value,
+                                    affiliation: element.querySelector(`#author-affiliation-${element.dataset.authorId}`).value,
+                                    country: element.querySelector(`#author-country-${element.dataset.authorId}`).value
+                                }))
+                            };
+
+                            console.log('Paper data collected with unique ID:', paperData);
+
+                            const timestamp = new Date().getTime();
+                            const fileName = `${timestamp}_${file.name}`;
+                            const storageRef = storage.ref(`papers/${fileName}`);
+                            const uploadTask = storageRef.put(file);
+
+                            console.log('Starting file upload...');
+
+                            uploadTask.on('state_changed',
+                                (snapshot) => {
+                                    const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                                    progressBar.style.width = progress + '%';
+                                    progressStatus.textContent = `Uploading: ${Math.round(progress)}%`;
+                                    console.log(`Upload progress: ${progress}%`);
+                                },
+                                (error) => {
+                                    console.error('Upload error:', error);
+                                    showError(`Upload failed: ${error.message}`);
+                                },
+                                () => {
+                                    console.log('File upload complete');
+                                    progressStatus.textContent = 'Processing submission...';
+                                    uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
+                                        console.log('Download URL obtained:', downloadURL);
+                                        const submissionRef = database.ref(`submissions/${uniqueId}`);
+                                        const submissionData = {
+                                            ...paperData,
+                                            fileUrl: downloadURL,
+                                            fileName: fileName,
+                                            status: 'submitted',
+                                            submissionDate: new Date().toISOString()
+                                        };
+
+                                        console.log('Saving to database with unique ID:', submissionData);
+
+                                        submissionRef.set(submissionData)
+                                            .then(() => {
+                                                console.log('Database save successful');
+                                                showSuccess(uniqueId);
+                                            })
+                                            .catch((error) => {
+                                                console.error('Database save error:', error);
+                                                showError(`Database error: ${error.message}`, true);
+                                            });
+                                    }).catch((error) => {
+                                        console.error('Error getting download URL:', error);
+                                        showError(`Failed to get file URL: ${error.message}`);
+                                    });
+                                }
+                            );
+                        } catch (error) {
+                            console.error('Submission error:', error);
+                            alert(error.message);
+                            resetForm();
+                        }
+                    });
+
+                    function showSuccess(uniqueId) {
+                        progressDiv.style.display = 'none';
+                        btnText.style.display = 'inline-block';
+                        btnLoading.style.display = 'none';
+                        resultDiv.innerHTML = `
+                        <div class="alert alert-success">
+                            <h3>Submission Successful!</h3>
+                            <p>Your paper has been submitted successfully. Unique Submission ID:</p>
+                            <div class="submission-id">${uniqueId}</div>
+                            <p>A confirmation email has been sent to the corresponding author's email address.</p>
+                            <div class="alert-actions">
+                                <a href="index.html" class="btn">Back to Home</a>
+                                <a href="track-submission.html?id=${uniqueId}" class="btn-secondary">Track Your Submission</a>
+                            </div>
+                        </div>
+                    `;
+                        resultDiv.style.display = 'block';
+                    }
+
+                    function showError(message, isPartial = false) {
+                        progressDiv.style.display = 'none';
+                        btnText.style.display = 'inline-block';
+                        btnLoading.style.display = 'none';
+                        resultDiv.innerHTML = `
+                        <div class="alert ${isPartial ? 'alert-warning' : 'alert-danger'}">
+                            <h3>Submission ${isPartial ? 'Partially Complete' : 'Failed'}</h3>
+                            <p>${message}</p>
+                            <div class="alert-actions">
+                                <button type="button" class="btn-secondary" onclick="document.getElementById('paper-submission-form').style.display='block';document.getElementById('submission-result').style.display='none'">Try Again</button>
+                                <a href="contact.html?issue=submission" class="btn-outline">Contact Support</a>
+                            </div>
+                        </div>
+                    `;
+                        resultDiv.style.display = 'block';
+                    }
+
+                    function resetForm() {
+                        btnText.style.display = 'inline-block';
+                        btnLoading.style.display = 'none';
+                        form.style.display = 'block';
+                        progressDiv.style.display = 'none';
+                    }
+                } catch (error) {
+                    console.error('Initialization error:', error);
+                    alert('Failed to initialize the submission system. Please check the console for details.');
+                }
+            });
+        </script>
+
+        <style>
+            .paper-upload-preview {
+                margin-top: 1rem;
+                padding: 1rem;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                display: none;
+            }
+
+            .paper-upload-preview.show {
+                display: block;
+            }
+
+            .file-info {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .file-icon {
+                font-size: 2rem;
+                color: #dc3545;
+            }
+        </style>
+    </main>
+    <footer>
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-info">
+                        <h3>ICAI25</h3>
+                        <p>International Conference on AI/ML, Digital Transformation & Sectoral Innovations</p>
+                        <p><i class="far fa-calendar-alt"></i> November 13-15, 2025</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Godavari Global University (GGU), Rajamahendravaram,
+                            Andhra Pradesh, India</p>
+                        <p><i class="fas fa-globe"></i> <a href="http://Aiconclave2025.in"
+                                target="_blank">Aiconclave2025.in</a></p>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="committee.html">Committee</a></li>
+                            <li><a href="paper-submissions.html">Paper Submissions</a></li>
+                            <li><a href="registration.html">Registration</a></li>
+                            <li><a href="speakers.html">Speakers</a></li>
+                            <li><a href="tracks.html">Tracks</a></li>
+                            <li><a href="important-dates.html">Important Dates</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-contact">
+                        <h4>Contact Us</h4>
+                        <p><i class="fas fa-envelope"></i> <a
+                                href="mailto:conferences@ggu.edu.in">conferences@ggu.edu.in</a></p>
+                        <p><i class="fas fa-globe"></i> <a href="http://Aiconclave2025.in" target="_blank">Conference
+                                Website</a></p>
+                        <div class="social-icons">
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>© <span id="current-year">2025</span> ICAI25 - International Conference on AI/ML, Digital
+                    Transformation & Sectoral Innovations. All Rights Reserved.</p>
+                <p>Hosted by <a href="#" target="_blank">Godavari Global University (GGU)</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        document.addEventListener('DOMContentLoaded', function () {
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            const navId = 'nav-' + (currentPage.split('.')[0] || 'home');
+            const navLink = document.getElementById(navId);
+            if (navLink) navLink.classList.add('active');
+        });
+    </script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

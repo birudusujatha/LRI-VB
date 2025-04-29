@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" sizes="32x32" href="https://firebasestorage.googleapis.com/v0/b/whatsup-519.firebasestorage.app/o/favicon-32x32.png?alt=media&token=c3233c51-328c-47dc-95e4-c3b95d068bcb">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Your Submission | ICAI25</title>
+    <meta name="description" content="Track your paper submission status for ICAI25 - International Conference on AI/ML, Digital Transformation & Sectoral Innovations">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <script src="assets/js/site-data.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4906126626960844"
+     crossorigin="anonymous"></script>
+    <!-- Add Razorpay SDK -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <style>
+        /* Custom styles for the result container */
+        #track-result .submission-details {
+            padding: 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .status-info {
+            margin-top: 15px;
+            padding: 10px;
+            border-left: 4px solid #333;
+            background-color: #f9f9f9;
+            font-size: 0.9em;
+        }
+        .status-info ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .status-info li {
+            margin-bottom: 10px;
+        }
+        .status-info strong {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-action">
+    <a href="https://aiconclave2025.in/registration.html" class="fab-button" id="registerButton">
+        <span class="fab-text">Register Now</span>
+        <span class="fab-icon">→</span>
+    </a>
+</div>
+
+<style>
+.floating-action {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    z-index: 1000;
+}
+
+.fab-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 110px;
+    height: 45px;
+    padding: 0 10px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.fab-button:hover {
+    width: 120px;
+    background-color: #0056b3;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.fab-icon {
+    font-size: 16px;
+    transition: transform 0.3s ease;
+}
+
+.fab-button:hover .fab-icon {
+    transform: translateX(4px);
+}
+
+/* Ripple effect */
+.fab-button::after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    pointer-events: none;
+    display: none;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .fab-button {
+        width: 90px;
+        height: 40px;
+        font-size: 12px;
+        padding: 0 8px;
+    }
+    
+    .fab-button:hover {
+        width: 100px;
+    }
+    
+    .fab-icon {
+        font-size: 14px;
+    }
+    
+    .floating-action {
+        bottom: 10px;
+        right: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .fab-button {
+        width: 80px;
+        height: 35px;
+        font-size: 11px;
+    }
+    
+    .fab-button:hover {
+        width: 90px;
+    }
+}
+</style>
+
+<script>
+document.getElementById('registerButton').addEventListener('click', function(e) {
+    const button = this;
+    const ripple = button.querySelector('::after');
+    const rect = button.getBoundingClientRect();
+    
+    button.style.setProperty('--ripple-x', (e.clientX - rect.left) + 'px');
+    button.style.setProperty('--ripple-y', (e.clientY - rect.top) + 'px');
+    button.querySelector('::after').style.display = 'block';
+    
+    setTimeout(() => {
+        button.querySelector('::after').style.display = 'none';
+    }, 600);
+});
+</script>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-content">
+            <div class="loader"></div>
+            <h2>ICAI25</h2>
+            <p>Loading amazing content...</p>
+        </div>
+    </div>
+
+    <header>
+        <div class="header-top">
+            <div class="container">
+                 <div class="header-contact">
+                    <a href="mailto:conferences@ggu.edu.in"><i class="fas fa-envelope"></i> conferences@ggu.edu.in</a>
+                </div>
+                <div class="header-dates">
+                    <span><i class="far fa-calendar-alt"></i> November 13-15, 2025</span>
+                </div>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="container" style="display: flex; align-items: center; justify-content: space-between;">
+                <div class="logos-container" style="display: flex; align-items: center; gap: 20px;">
+                    <div class="logo">
+                        <a href="index.html">
+                            <img src="https://vduoxfcddksibwrpiuqd.supabase.co/storage/v1/object/public/image/images/Picsart_25-03-23_08-07-46-287.jpg"
+                                alt="ICAI25 Logo" class="logo-image">
+                        </a>
+                    </div>
+                </div>
+                <nav id="main-nav" style="display: flex; align-items: center;">
+                    <img src="https://qaizklilgqdaomywsofw.supabase.co/storage/v1/object/public/certificates//icai25.png"
+                        alt="Menu Icon" style="height: 40px; margin-right: 15px;">
+                    <button id="menu-toggle" aria-label="Toggle Navigation Menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <ul class="nav-links">
+                        <li><a href="index.html" id="nav-home">Home</a></li>
+                        <li><a href="committee.html" id="nav-committee">Committee</a></li>
+                        <li class="dropdown">
+                            <a href="#" id="nav-authors">Authors</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="speakers.html">Speakers</a></li>
+                                <li><a href="tracks.html">Tracks</a></li>
+                                <li><a href="important-dates.html">Important Dates</a></li>
+                                <li><a href="paper-submissions.html" class="active">Paper Submissions</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="registration.html" id="nav-registration">Registration</a></li>
+                        <li><a href="contact.html" id="nav-contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-header">
+            <div class="container">
+                <h1 class="page-title">Track Your Submission</h1>
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="paper-submissions.html">Paper Submissions</a></li>
+                    <li class="breadcrumb-item">Track Submission</li>
+                    <br><br>
+                </ul>
+            </div>
+        </div>
+
+
+        <section class="submission section">
+            <div class="container">
+                       <div class="status-info">
+    <strong>Status Information:</strong>
+    <ul>
+        <li style="color:#80ccff"><strong>Submitted:</strong> Your paper has been received and is awaiting review.</li>
+        <li style="color:#00ff00"><strong>Verified:</strong> Your paper has been reviewed and accepted; payment is now required.</li>
+        <li style="color:#0033cc"><strong>Paid:</strong> Payment has been completed, and your submission is fully processed.</li>
+        <li style="color:#ff3300"><strong>Rejected:</strong> Your paper did not meet the criteria and has been declined.</li>
+        <li style="color:#806600"><strong>Other:</strong> An undefined status; please contact support for clarification.</li>
+    </ul>
+</div>
+                <div class="content-box">
+                    <div id="track-form-container">
+                        <form id="track-submission-form" class="submission-form">
+                            <div class="form-section">
+                                <h3>Enter Submission ID</h3>
+                                <div class="form-group">
+                                    <label for="submission-id" class="form-label">Submission ID *</label>
+                                    <input type="text" id="submission-id" name="submission-id" class="form-control" required placeholder="e.g., 12345">
+                                    <div class="form-hint">Enter the submission ID provided after submitting your paper</div>
+                                </div>
+                                <div class="submission-actions">
+                                    <button type="submit" class="btn-submit" id="track-btn">
+                                        <span class="btn-text">Track Submission</span>
+                                        <span class="btn-loading" style="display: none;">
+                                            <i class="fas fa-spinner fa-spin"></i> Tracking...
+                                        </span>
+                                    </button>
+                                    <br><br><br>
+                                </div>
+                            </div>
+                        </form>
+
+                        <div id="track-result" style="display: none;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Firebase SDK -->
+        <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database-compat.js"></script>
+        <script src="assets/js/firebase-config.js"></script>
+
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if Firebase is available
+            if (typeof firebase === 'undefined') {
+                console.error('Firebase SDK not loaded');
+                alert('Firebase SDK failed to load. Please check your internet connection and try again.');
+                return;
+            }
+
+            try {
+                // Initialize Firebase
+                console.log('Initializing Firebase...');
+                const app = firebase.initializeApp(firebaseConfig);
+                const database = firebase.database();
+                console.log('Firebase initialized successfully');
+
+                // Form elements
+                const form = document.getElementById('track-submission-form');
+                const resultDiv = document.getElementById('track-result');
+                const trackBtn = document.getElementById('track-btn');
+                const btnText = trackBtn.querySelector('.btn-text');
+                const btnLoading = trackBtn.querySelector('.btn-loading');
+
+                // Pre-fill submission ID from URL parameter if present
+                const urlParams = new URLSearchParams(window.location.search);
+                const submissionIdFromUrl = urlParams.get('id');
+                if (submissionIdFromUrl) {
+                    document.getElementById('submission-id').value = submissionIdFromUrl;
+                    trackSubmission(submissionIdFromUrl); // Auto-track if ID is in URL
+                }
+
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const submissionId = document.getElementById('submission-id').value.trim();
+                    trackSubmission(submissionId);
+                });
+
+                function trackSubmission(submissionId) {
+                    if (!submissionId) {
+                        showError('Please enter a valid submission ID.');
+                        return;
+                    }
+
+                    btnText.style.display = 'none';
+                    btnLoading.style.display = 'inline-block';
+                    resultDiv.style.display = 'none';
+
+                    console.log('Tracking submission with ID:', submissionId);
+
+                    const submissionRef = database.ref('submissions/' + submissionId);
+                    submissionRef.once('value')
+                        .then((snapshot) => {
+                            btnText.style.display = 'inline-block';
+                            btnLoading.style.display = 'none';
+
+                            if (snapshot.exists()) {
+                                const data = snapshot.val();
+                                console.log('Submission data retrieved:', data);
+                                showSubmissionDetails(data, submissionId);
+                            } else {
+                                console.log('No submission found for ID:', submissionId);
+                                showError('No submission found with this ID. Please check the ID and try again.');
+                            }
+                        })
+                        .catch((error) => {
+                            console.error('Error fetching submission:', error);
+                            showError(`Error fetching submission: ${error.message}`);
+                            btnText.style.display = 'inline-block';
+                            btnLoading.style.display = 'none';
+                        });
+                }
+
+                function showSubmissionDetails(data, submissionId) {
+                    let payButtonHtml = '';
+                    if (data.status === 'verified') {
+                        payButtonHtml = `
+                            <button id="pay-btn" class="btn-primary" onclick="initiatePayment('${submissionId}', '${data.authors[0].email}')">
+                                Pay Registration Fee (₹1)
+                            </button>
+                        `;
+                    }
+
+                    // Define background color based on status
+                    let bgColor;
+                    switch (data.status) {
+                        case 'submitted':
+                            bgColor = '#cce5ff'; // Light blue
+                            break;
+                        case 'verified':
+                            bgColor = '#d4edda'; // Light green
+                            break;
+                        case 'paid':
+                            bgColor = '#cce5ff'; // Light blue (same as submitted)
+                            break;
+                        case 'rejected':
+                            bgColor = '#f8d7da'; // Light red
+                            break;
+                        default:
+                            bgColor = '#fff3cd'; // Light yellow
+                    }
+
+                    resultDiv.innerHTML = `
+                        <div class="submission-details" style="background-color: ${bgColor};">
+                            <h3>Submission Details</h3>
+                            <p><strong>Submission ID:</strong> ${data.uniqueId || submissionId}</p>
+                            <p><strong>Title:</strong> ${data.title}</p>
+                            <p><strong>Track:</strong> ${data.track}</p>
+                            <p><strong>Type:</strong> ${data.type}</p>
+                            <p><strong>Status:</strong> ${data.status}</p>
+                            <p><strong>Submission Date:</strong> ${new Date(data.submissionDate).toLocaleString()}</p>
+                            <p><strong>Authors:</strong></p>
+                            <ul>
+                                ${data.authors.map(author => `<li>${author.name} (${author.email}) - ${author.affiliation}, ${author.country}</li>`).join('')}
+                            </ul>
+                            <p><strong>File:</strong> <a href="${data.fileUrl}" target="_blank">${data.fileName}</a></p>
+                            
+                            <div class="alert-actions">
+                                <a href="paper-submissions.html" class="btn-secondary">Submit Another Paper</a>
+                                ${payButtonHtml}
+                            </div>
+                        </div>
+                    `;
+                    resultDiv.style.display = 'block';
+                }
+
+                window.initiatePayment = function(submissionId, authorEmail) {
+                    const options = {
+                        key: 'rzp_live_HJl9NwyBSY9rwV', // Razorpay key from the image
+                        amount: 100, // Amount in paise (1 rupee = 100 paise)
+                        currency: 'INR',
+                        name: 'ICAI25 Registration',
+                        description: 'Registration Fee for Paper Submission',
+                        image: 'https://vduoxfcddksibwrpiuqd.supabase.co/storage/v1/object/public/image/images/Picsart_25-03-23_08-07-46-287.jpg', // ICAI25 logo
+                        handler: function(response) {
+                            console.log('Payment successful:', response);
+                            // Update the status to "paid" in Firebase
+                            const submissionRef = database.ref('submissions/' + submissionId);
+                            submissionRef.update({ status: 'paid' })
+                                .then(() => {
+                                    console.log('Status updated to paid for submission ID:', submissionId);
+                                    alert('Payment successful! Your submission status has been updated to "paid".');
+                                    // Refresh the submission details
+                                    trackSubmission(submissionId);
+                                })
+                                .catch((error) => {
+                                    console.error('Error updating status:', error);
+                                    showError(`Error updating status: ${error.message}`);
+                                });
+                        },
+                        prefill: {
+                            email: authorEmail, // Prefill with the first author's email
+                            contact: '', // Add a contact number if available in the data
+                        },
+                        notes: {
+                            submission_id: submissionId,
+                        },
+                        theme: {
+                            color: '#F37254', // Customize the theme color
+                        },
+                        modal: {
+                            ondismiss: function() {
+                                console.log("Payment modal closed");
+                            }
+                        }
+                    };
+
+                    const rzp = new Razorpay(options);
+                    rzp.open();
+
+                    rzp.on('payment.failed', function(response) {
+                        console.error('Payment failed:', response);
+                        showError(`Payment failed: ${response.error.description}`);
+                    });
+                };
+
+                function showError(message) {
+                    resultDiv.innerHTML = `
+                        <div class="alert alert-danger">
+                            <h3>Error</h3>
+                            <p>${message}</p>
+                            <div class="alert-actions">
+                                <button type="button" class="btn-secondary" onclick="document.getElementById('track-result').style.display='none';">Try Again</button>
+                                <a href="contact.html?issue=track-submission" class="btn-outline">Contact Support</a>
+                            </div>
+                        </div>
+                    `;
+                    resultDiv.style.display = 'block';
+                }
+            } catch (error) {
+                console.error('Initialization error:', error);
+                alert('Failed to initialize the tracking system. Please check the console for details.');
+            }
+        });
+        </script>
+    </main>
+
+    <footer>
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-info">
+                        <h3>ICAI25</h3>
+                        <p>International Conference on AI/ML, Digital Transformation & Sectoral Innovations</p>
+                        <p><i class="far fa-calendar-alt"></i> November 13-15, 2025</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Godavari Global University (GGU), Rajamahendravaram, Andhra Pradesh, India</p>
+                        <p><i class="fas fa-globe"></i> <a href="http://Aiconclave2025.in" target="_blank">Aiconclave2025.in</a></p>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="committee.html">Committee</a></li>
+                            <li><a href="paper-submissions.html">Paper Submissions</a></li>
+                            <li><a href="registration.html">Registration</a></li>
+                            <li><a href="speakers.html">Speakers</a></li>
+                            <li><a href="tracks.html">Tracks</a></li>
+                            <li><a href="important-dates.html">Important Dates</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-contact">
+                        <h4>Contact Us</h4>
+                        <p><i class="fas fa-envelope"></i> <a href="/cdn-cgi/l/email-protection#183b37363e3d2a3d363b3d2b183f3f2d763d3c2d763035"><span class="__cf_email__" data-cfemail="2e4d4140484b5c4b404d4b5d6e49495b004b4a5b004740">[email protected]</span></a></p>
+                        <p><i class="fas fa-globe"></i> <a href="http://Aiconclave2025.in" target="_blank">Conference Website</a></p>
+                        <div class="social-icons">
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>© <span id="current-year">2025</span> ICAI25 - International Conference on AI/ML, Digital Transformation & Sectoral Innovations. All Rights Reserved.</p>
+                <p>Hosted by <a href="#" target="_blank">Godavari Global University (GGU)</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            const navId = 'nav-' + (currentPage.split('.')[0] || 'home');
+            const navLink = document.getElementById(navId);
+            if (navLink) navLink.classList.add('active');
+        });
+    </script>
+    <script src="assets/js/script.js"></script>
+    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'925ec972cafebcfd',t:'MTc0MjkwOTY3OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+</body>
+</html>
