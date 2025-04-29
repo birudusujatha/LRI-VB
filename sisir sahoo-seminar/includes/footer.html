@@ -1,0 +1,63 @@
+    </main>
+    <footer>
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-info">
+                        <h3>ICAI25</h3>
+                        <p>International Conference on AI/ML, Digital Transformation & Sectoral Innovations</p>
+                        <p><i class="far fa-calendar-alt"></i> November 13-15, 2025</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Godavari Global University (GGU), Rajamahendravaram, Andhra Pradesh, India</p>
+                        <p><i class="fas fa-globe"></i> <a href="http://Aiconclave2025.in" target="_blank">Aiconclave2025.in</a></p>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="committee.html">Committee</a></li>
+                            <li><a href="paper-submissions.html">Paper Submissions</a></li>
+                            <li><a href="registration.html">Registration</a></li>
+                            <li><a href="speakers.html">Speakers</a></li>
+                            <li><a href="tracks.html">Tracks</a></li>
+                            <li><a href="important-dates.html">Important Dates</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-contact">
+                        <h4>Contact Us</h4>
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:conferences@ggu.edu.in">conferences@ggu.edu.in</a></p>
+                        <p><i class="fas fa-globe"></i> <a href="http://Aiconclave2025.in" target="_blank">Conference Website</a></p>
+                        <div class="social-icons">
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; <span id="current-year">2025</span> ICAI25 - International Conference on AI/ML, Digital Transformation & Sectoral Innovations. All Rights Reserved.</p>
+                <p>Hosted by <a href="#" target="_blank">Godavari Global University (GGU)</a></p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Set current year in the footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Set active navigation item
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname.split('/').pop();
+            const navId = 'nav-' + (currentPage.split('.')[0] || 'home');
+            const navLink = document.getElementById(navId);
+            if (navLink) {
+                navLink.classList.add('active');
+            }
+        });
+    </script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paper Submissions | ICAI25</title>
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="https://firebasestorage.googleapis.com/v0/b/whatsup-519.firebasestorage.app/o/favicon-32x32.png?alt=media&token=c3233c51-328c-47dc-95e4-c3b95d068bcb">
+    <meta name="description"
+        content="ICAI25 - International Conference on AI/ML, Digital Transformation & Sectoral Innovations, hosted by Godavari Global University">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
+    <script src="assets/js/site-data.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4906126626960844"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="preloader">
+        <div class="preloader-content">
+            <div class="loader"></div>
+            <h2>ICAI25</h2>
+            <p>GGU PRESENTS</p>
+        </div>
+    </div>
+
+<div class="header-wrapper">
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="header-contact">
+                    <a href="mailto:conferences@ggu.edu.in"><i class="fas fa-envelope"></i> conferences@ggu.edu.in</a>
+                </div>
+                <div class="header-dates">
+                    <span><i class="far fa-calendar-alt"></i> November 13-15, 2025</span>
+                </div>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="container" style="display: flex; align-items: center; justify-content: space-between;">
+                <div class="logos-container" style="display: flex; align-items: center; gap: 20px;">
+                    <div class="logo">
+                        <a href="index.html">
+                            <img src="https://vduoxfcddksibwrpiuqd.supabase.co/storage/v1/object/public/image/images/Picsart_25-03-23_08-07-46-287.jpg"
+                                alt="ICAI25 Logo" class="logo-image">
+                        </a>
+                    </div>
+                </div>
+                <nav id="main-nav" style="display: flex; align-items: center;">
+                    <img src="https://qaizklilgqdaomywsofw.supabase.co/storage/v1/object/public/certificates//icai25.png"
+                        alt="Menu Icon" style="height: 40px; margin-right: 15px;">
+                    <button id="menu-toggle" aria-label="Toggle Navigation Menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <ul class="nav-links">
+                        <li><a href="index.html" id="nav-home" >Home</a></li>
+                        <li><a href="committee.html" id="nav-committee" >Committee</a></li>
+                        <li class="dropdown">
+                            <a href="#" id="nav-authors"  class="active">Authors</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="speakers.html" >Speakers</a></li>
+                                <li><a href="tracks.html" >Tracks</a></li>
+                                <li><a href="important-dates.html">Important Dates</a></li>
+                                <li><a href="paper-submissions.html"  class="active">Paper Submissions</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="registration.html" id="nav-registration">Registration</a></li>
+                        <li><a href="contact.html" id="nav-contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+</div>
+    <main>
+
+<div class="page-header">
+</div>
+<div class="floating-action">
+    <a href="https://aiconclave2025.in/registration.html" class="fab-button" id="registerButton">
+        <span class="fab-text">Register Now</span>
+        <span class="fab-icon">→</span>
+    </a>
+</div>
+
+<style>
+.floating-action {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    z-index: 1000;
+}
+
+.fab-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 110px;
+    height: 45px;
+    padding: 0 10px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.fab-button:hover {
+    width: 120px;
+    background-color: #0056b3;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.fab-icon {
+    font-size: 16px;
+    transition: transform 0.3s ease;
+}
+
+.fab-button:hover .fab-icon {
+    transform: translateX(4px);
+}
+
+/* Ripple effect */
+.fab-button::after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    pointer-events: none;
+    display: none;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .fab-button {
+        width: 90px;
+        height: 40px;
+        font-size: 12px;
+        padding: 0 8px;
+    }
+    
+    .fab-button:hover {
+        width: 100px;
+    }
+    
+    .fab-icon {
+        font-size: 14px;
+    }
+    
+    .floating-action {
+        bottom: 10px;
+        right: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .fab-button {
+        width: 80px;
+        height: 35px;
+        font-size: 11px;
+    }
+    
+    .fab-button:hover {
+        width: 90px;
+    }
+}
+</style>
+
+<script>
+document.getElementById('registerButton').addEventListener('click', function(e) {
+    const button = this;
+    const ripple = button.querySelector('::after');
+    const rect = button.getBoundingClientRect();
+    
+    button.style.setProperty('--ripple-x', (e.clientX - rect.left) + 'px');
+    button.style.setProperty('--ripple-y', (e.clientY - rect.top) + 'px');
+    button.querySelector('::after').style.display = 'block';
+    
+    setTimeout(() => {
+        button.querySelector('::after').style.display = 'none';
+    }, 600);
+});
+</script>
+
+        <section class="submission section">
+            <div class="container">
+                <div class="content-section">
+                    <h2 class="content-title">Important Dates</h2>
+
+                    <div class="content-box">
+                        <div
+                            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                            <div>
+                                <h4><i class="far fa-file-alt"></i> Abstract Submission</h4>
+                                <p>January 15, 2025</p>
+                            </div>
+
+                            <div>
+                                <h4><i class="far fa-file"></i> Full Paper Submission</h4>
+                                <p>March 31, 2025</p>
+                            </div>
+
+                            <div>
+                                <h4><i class="far fa-envelope-open"></i> Notification of Acceptance</h4>
+                                <p>May 15, 2025</p>
+                            </div>
+
+                            <div>
+                                <h4><i class="far fa-file-pdf"></i> Camera-ready Submission</h4>
+                                <p>June 1, 2025</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="content-title">Submission Guidelines</h2>
+
+                    <div class="guidelines-list content-box">
+                        <h3>Paper Format</h3>
+                        <ul>
+                            <li>All papers must be original and not simultaneously submitted to another journal or
+                                conference.</li>
+                            <li>Papers should be submitted in PDF format.</li>
+                            <li>Full papers should be 6-8 pages in length, including figures, tables, and references.
+                            </li>
+                            <li>Use the standard IEEE conference template for formatting your paper.</li>
+                            <li>All papers will undergo a double-blind peer-review process.</li>
+                        </ul>
+
+                        <h3 style="margin-top: 2rem;">Topics of Interest</h3>
+                        <p>Papers are invited in any of the 8 conference tracks:</p>
+                        <ul id="tracks-list">
+                            <!-- This will be populated by JavaScript -->
+                        </ul>
+                        <p>For detailed track information and subtopics, please visit the <a href="tracks.html">Tracks
+                                page</a>.</p>
+
+                        <h3 style="margin-top: 2rem;">Ethical Guidelines</h3>
+                        <ul>
+                            <li>Authors are expected to adhere to the highest standards of research integrity and
+                                ethics.</li>
+                            <li>Plagiarism in any form will lead to immediate rejection of the paper.</li>
+                            <li>All submissions will be checked using plagiarism detection software.</li>
+                            <li>If the research involves human subjects, appropriate ethical clearances should be
+                                mentioned in the paper.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="content-title">Submission Process</h2>
+
+                    <div class="submission-steps content-box">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Prepare Your Paper</h4>
+                                <p>Format your paper according to the IEEE conference template. Ensure that your paper
+                                    adheres to the page limit and formatting guidelines.</p>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Fill the Submission Form</h4>
+                                <p>Complete the online submission form with your paper details, author information, and
+                                    track selection.</p>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Upload Your Paper</h4>
+                                <p>Upload your paper in PDF format (max 10MB). You will receive a confirmation with a
+                                    submission ID upon successful upload.</p>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>Review Process</h4>
+                                <p>Your paper will undergo a double-blind peer-review process. The program committee
+                                    will assess the technical quality, relevance, and originality of your submission.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">5</div>
+                            <div class="step-content">
+                                <h4>Notification</h4>
+                                <p>Authors will be notified of the acceptance or rejection of their papers by May 15,
+                                    2025.</p>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">6</div>
+                            <div class="step-content">
+                                <h4>Camera-Ready Submission</h4>
+                                <p>If your paper is accepted, you will need to submit the camera-ready version by June
+                                    1, 2025, incorporating any changes based on reviewer feedback.</p>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">7</div>
+                            <div class="step-content">
+                                <h4>Registration</h4>
+                                <p>At least one author of each accepted paper must register for the conference and
+                                    present the paper.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 2rem;">
+                        <a href="submit-paper.html" class="btn"
+                            style="background-color: var(--accent-color); margin-right: 1rem;">Submit Your Paper</a>
+                        <a href="track-submission.html" class="btn"
+                            style="background-color: var(--secondary-color);">Track Your Submission</a>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="content-title">Publication</h2>
+
+                    <div class="content-box">
+                        <p>All accepted and presented papers will be published in the conference proceedings. The
+                            organizing committee is in the process of arranging for the publication of selected
+                            high-quality papers in reputed international journals (subject to additional review).</p>
+
+                        <h3 style="margin-top: 1.5rem;">Copyright Information</h3>
+                        <p>Authors of accepted papers will be required to sign a copyright transfer form. The copyright
+                            of the paper will be transferred to the publisher of the conference proceedings.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta section" style="background-color: var(--light-color); text-align: center;">
+            <div class="container" style="color: #1192F5;">
+    <h2 style="color: #1192F5;">Need Help with Your Submission?</h2>
+    <p style="margin-bottom: 1.5rem;">If you have any questions regarding paper submission, please don't hesitate to contact us.</p>
+    <a href="contact.html" class="btn" style="color: #1192F5;">Contact Us</a>
+</div>
+        </section>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                // Populate tracks list
+                const tracksList = document.getElementById('tracks-list');
+
+                if (tracksList) {
+                    tracks.forEach(track => {
+                        const li = document.createElement('li');
+                        li.innerHTML = `<strong>Track ${track.id}:</strong> ${track.title}`;
+                        tracksList.appendChild(li);
+                    });
+                }
+            });
+        </script>
+
+    </main>
+    <footer>
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-info">
+                        <h3>ICAI25</h3>
+                        <p>International Conference on AI/ML, Digital Transformation & Sectoral Innovations</p>
+                        <p><i class="far fa-calendar-alt"></i> November 13-15, 2025</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Godavari Global University (GGU), Rajamahendravaram,
+                            Andhra Pradesh, India</p>
+                        <p><i class="fas fa-globe"></i> <a href="http://Aiconclave2025.in"
+                                target="_blank">Aiconclave2025.in</a></p>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="committee.html">Committee</a></li>
+                            <li><a href="paper-submissions.html">Paper Submissions</a></li>
+                            <li><a href="registration.html">Registration</a></li>
+                            <li><a href="speakers.html">Speakers</a></li>
+                            <li><a href="tracks.html">Tracks</a></li>
+                            <li><a href="important-dates.html">Important Dates</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-contact">
+                        <h4>Contact Us</h4>
+                        <p><i class="fas fa-envelope"></i> <a
+                                href="mailto:conferences@ggu.edu.in">conferences@ggu.edu.in</a></p>
+                        <p><i class="fas fa-globe"></i> <a href="http://Aiconclave2025.in" target="_blank">Conference
+                                Website</a></p>
+                        <div class="social-icons">
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; <span id="current-year">2025</span> ICAI25 - International Conference on AI/ML, Digital
+                    Transformation & Sectoral Innovations. All Rights Reserved.</p>
+                <p>Hosted by <a href="#" target="_blank">Godavari Global University (GGU)</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Set current year in the footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Set active navigation item
+        document.addEventListener('DOMContentLoaded', function () {
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            const navId = 'nav-' + (currentPage.split('.')[0] || 'home');
+            const navLink = document.getElementById(navId);
+            if (navLink) {
+                navLink.classList.add('active');
+            }
+        });
+    </script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
